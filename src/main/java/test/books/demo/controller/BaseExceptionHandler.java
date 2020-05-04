@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import test.books.demo.exception.ObjectNotFoundException;
 
 @ControllerAdvice
 public class BaseExceptionHandler extends ResponseEntityExceptionHandler {
@@ -20,6 +21,13 @@ public class BaseExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public final ErrorDetails handleAllExceptions(Throwable ex, WebRequest request) {
+        return new ErrorDetails("error", ex.getMessage());
+    }
+
+    @ExceptionHandler({ObjectNotFoundException.class})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public final ErrorDetails handleNotFound(RuntimeException ex, WebRequest request) {
         return new ErrorDetails("error", ex.getMessage());
     }
 

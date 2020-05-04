@@ -1,0 +1,16 @@
+.book-img {
+    width: 25%;
+    height: 25%;
+}
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.book-name {
+    margin-left: 10px;
+}
+
+.book-price {
+    margin-left: 10px;
+}
