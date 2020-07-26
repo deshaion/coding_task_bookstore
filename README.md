@@ -45,27 +45,18 @@ Order the recommended books by their similarity to the selected book.
 
 ![alt text](https://github.com/deshaion/coding_task_bookstore/blob/master/images/simFormula.JPG)
 
-- Example similarity of book1 and book2
-UN ~ User, BN ~ Book
-sim(B1, B2) = (1*1 + 0*1 + 1*1)
-/ ((sqrt(1^2 + 0^2 + 1^2)
-* sqrt(1^2 + 1^2 + 1^2))
-A B
-1
-B
-2
-B
-3
+- Example similarity of book1 and book2 and book3
 
-U
-1
-1 1
-U
-2
-1
-U
-3
-1 1 1 Please read the requirements carefully and plan your time according to the
-requirements. Add your solution to a self-contained ZIP-File. The
+| |Book 1|Book 2|Book 3|
+| --- |:-------------:|:-----:|:---:|
+| User 1 | read | read | |
+| User 2 | | read | |
+| User 3 | read |read|read|
 
-application should be runnable by the basic “mvn spring-boot:run” command.
+sim(Book1, Book2) = (1 * 1 + 0 * 1 + 1 * 1) / ((sqrt(1^2 + 0^2 + 1^2) * sqrt(1^2 + 1^2 + 1^2))
+sim(Book2, Book3) = (1 * 0 + 1 * 0 + 1 * 1) / ((sqrt(1^2 + 1^2 + 1^2) * sqrt(0^2 + 0^2 + 1^2))
+sim(Book1, Book3) = (1 * 0 + 0 * 0 + 1 * 1) / ((sqrt(1^2 + 0^2 + 1^2) * sqrt(0^2 + 0^2 + 1^2))
+
+* Book1 vector is (1 0 1)
+* Book2 vector is (1 1 1)
+* Book3 vector is (0 0 1)
