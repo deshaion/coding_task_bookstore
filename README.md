@@ -43,7 +43,7 @@ Requirements:
 - Implement an Item-Based Collaborative Filtering. Use the cosine-similarity in your computation.
 Order the recommended books by their similarity to the selected book.
 
-![alt text](imgages/simFormula.JPG "Sim Formula")
+![alt text](https://github.com/deshaion/coding_task_bookstore/blob/master/images/simFormula.JPG)
 
 - Example similarity of book1 and book2
 UN ~ User, BN ~ Book
