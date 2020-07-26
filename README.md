@@ -53,10 +53,13 @@ Order the recommended books by their similarity to the selected book.
 | User 2 | | read | |
 | User 3 | read |read|read|
 
-sim(Book1, Book2) = (1 * 1 + 0 * 1 + 1 * 1) / ((sqrt(1^2 + 0^2 + 1^2) * sqrt(1^2 + 1^2 + 1^2))
-sim(Book2, Book3) = (1 * 0 + 1 * 0 + 1 * 1) / ((sqrt(1^2 + 1^2 + 1^2) * sqrt(0^2 + 0^2 + 1^2))
-sim(Book1, Book3) = (1 * 0 + 0 * 0 + 1 * 1) / ((sqrt(1^2 + 0^2 + 1^2) * sqrt(0^2 + 0^2 + 1^2))
-
+So the books' vectors are
 * Book1 vector is (1 0 1)
 * Book2 vector is (1 1 1)
 * Book3 vector is (0 0 1)
+
+Similirities:
+* sim(Book1, Book2) = (1 * 1 + 0 * 1 + 1 * 1) / ((sqrt(1^2 + 0^2 + 1^2) * sqrt(1^2 + 1^2 + 1^2))
+* sim(Book2, Book3) = (1 * 0 + 1 * 0 + 1 * 1) / ((sqrt(1^2 + 1^2 + 1^2) * sqrt(0^2 + 0^2 + 1^2))
+* sim(Book1, Book3) = (1 * 0 + 0 * 0 + 1 * 1) / ((sqrt(1^2 + 0^2 + 1^2) * sqrt(0^2 + 0^2 + 1^2))
+
