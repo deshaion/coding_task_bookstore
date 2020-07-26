@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {ListGroup, ListGroupItem, PageHeader} from "react-bootstrap";
+import {ListGroup, PageHeader} from "react-bootstrap";
 import {API_ROOT} from "../apiConfig";
-import {Link} from "react-router-dom";
-import "./Books.css";
+import BooksList from "./BooksList";
 
 export default function Books() {
     const [books, setBooks] = useState([]);
@@ -37,30 +36,15 @@ export default function Books() {
         return res;
     }
 
-    function renderNotesList(books) {
-        return books.map((book, i) =>
-            (
-                <ListGroupItem>
-                    <div className="item">
-                        <img src={book.image} alt={book.name} width="200" className="book-img"/>
-                        <div className="media-body">
-                            <h5 className="book-name">{book.name}</h5>
-                            <div className="book-price">
-                                <h6 className="">{book.price} $</h6>
-                            </div>
-                        </div>
-                        <div className="ml-lg-5 order-1 order-lg-2"><Link to={`details/${book.id}`}>More</Link></div>
-                    </div>
-                </ListGroupItem>
-            )
-        );
+    function renderBooksList(books) {
+        return <BooksList books={books} />;
     }
 
     return (
         <div className="Bookstore">
             <PageHeader>Bookstore IT Books</PageHeader>
             <ListGroup>
-                {!isLoading && renderNotesList(books)}
+                {!isLoading && renderBooksList(books)}
             </ListGroup>
         </div>
     );
